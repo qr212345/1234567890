@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ババ抜き大会管理</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="sidebar">
+    <button onclick="goToSection('seat')">🎮 プレイヤー管理</button>
+    <button onclick="goToSection('ranking')">🏆 順位登録</button>
+    <button onclick="window.open('https://example.com/rank', '_blank')">📈 ランキング表</button>
+    <button onclick="window.open('https://example.com/live', '_blank')">📍 リアルタイム座席</button>
+  </div>
+
+  <main id="main">
+    <!-- プレイヤー・座席管理画面 -->
+    <section id="seat" class="view">
+      <h1>🎮 プレイヤー・座席管理</h1>
+      <button onclick="startQRScan()">QRコード読み取り開始</button>
+      <div id="qr-reader" class="qr-area"></div>
+      <div id="table-list" class="table-area"></div>
+    </section>
+
+    <!-- 順位登録画面 -->
+    <section id="ranking" class="view hidden">
+      <h1>🏆 順位登録</h1>
+      <button onclick="startSeatQRScan()">座席QR読み取り</button>
+      <div id="ranking-seat-id">読み取り座席ID: <span id="ranking-seat"></span></div>
+      <div id="ranking-area" class="ranking-area">
+        <div class="rank-drop" data-rank="1">1位</div>
+        <div class="rank-drop" data-rank="2">2位</div>
+        <div class="rank-drop" data-rank="3">3位</div>
+        <div class="rank-drop" data-rank="4">4位</div>
+        <div class="rank-drop" data-rank="5">5位</div>
+        <div class="rank-drop" data-rank="6">6位</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
